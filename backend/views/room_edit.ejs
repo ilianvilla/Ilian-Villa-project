@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title><%= title %></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2> Room Edit Form </h2>
+  <form action="/room/update" method="post">
+    <input type="hidden" value="<%= room.id %>" name="id">
+    <div class="form-group">
+      <label for="number">Room Number:</label>
+      <input type="text" class="form-control" id="number" placeholder="Enter Room Number" value="<%= room.number %>" name="number" required>
+    </div>
+    <label for="type">Choose Room Type:</label>
+  <select name="roomtype_id" id="roomtype_id">
+    <option value="1">Single</option>
+    <option value="2">Double</option>
+    <option value="3">Deluxe</option>
+    <option value="4">Suite</option>
+  </select>
+  <br><br>
+    <div class="form-group">
+      <label for="price">Room Price:</label>
+      <input type="number" class="form-control" id="price" placeholder="Enter Room Price" value="<%= room.price %>" name="price" required>
+    </div>
+    <div class="form-group">
+      <label for="description">Room Description:</label>
+      <input type="text" class="form-control" id="description" placeholder="Enter Room Description" value="<%= room.description %>" name="description" required>
+    </div>
+    <div class="form-group">
+      <label for="image">Room Image:</label>
+      <input type="text" class="form-control" id="image" placeholder="Enter Image" value="<%= room.image %>" name="image" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+</body>
+</html>

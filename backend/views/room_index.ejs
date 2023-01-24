@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Room List</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Rooms</h2>
+  <a href="/createroom" class="btn btn-sm btn-primary">Add Room</a><br/><br/>
+  <table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th>Number</th>
+        <th>Type</th>
+        <th>Price</th>
+        <th>Image</th>
+        <th>Description</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+        <% room.forEach(function(room){ %>
+            <tr>
+                <td><%= room.number %></td>
+                <td><%= room.type %></td>
+                <td><%= room.price %></td>
+                <td><%= room.image %></td>
+                <td><%= room.description %></td>
+                
+                <td>
+                    <a href="/room/<%= room.id %>/edit" class="btn btn-sm btn-primary">Edit</a>
+                    <a href="/room/<%= room.id %>/delete" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+            </tr>
+        <% }); %>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>
