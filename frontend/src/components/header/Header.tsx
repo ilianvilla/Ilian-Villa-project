@@ -1,12 +1,16 @@
 import { faBed, faCalendarDays, faCar, faPlane, faTaxi } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import "./header.css";
+import "./header.scss";
 import { DateRange } from 'react-date-range';
 import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css';
 import { format } from 'date-fns';
 import { useState } from 'react';
+
+interface HeaderProps {
+  type: string;
+}
 
 interface Range {
   startDate: Date;
@@ -14,7 +18,7 @@ interface Range {
   key: string;
 }
 
-const Header: React.FC = () => {
+const Header: React.FC<HeaderProps> = (props) => {
   const [openDate, setOpenDate] = useState(false)
   const [date, setDate] = useState<Range[]>([
     {
