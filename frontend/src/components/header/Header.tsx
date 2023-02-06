@@ -7,6 +7,7 @@ import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css';
 import { format } from 'date-fns';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 interface HeaderProps {
   type: string;
@@ -27,6 +28,13 @@ const Header: React.FC<HeaderProps> = (props) => {
       key: 'selection'
     }
   ]);
+
+  const navigate = useNavigate();
+
+  const handleSearch = () => {
+    navigate("/showRooms", {state:{date}})
+    console.log(date)
+  };
 
   return (
     <div className='header'>
@@ -75,7 +83,7 @@ const Header: React.FC<HeaderProps> = (props) => {
               }
                 
               <div className="headerSearchItem">
-             <button className="headerButton">Search</button>
+             <button className="headerButton" onClick={handleSearch}>Search</button>
             </div>
           </div>
         </div>
