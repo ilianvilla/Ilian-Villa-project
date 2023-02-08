@@ -1,21 +1,21 @@
 require('dotenv').config();
 import path from 'path';
 import express from 'express';
-import ejs from 'ejs';
+// import ejs from 'ejs';
 import bodyParser from 'body-parser';
 const app = express();
 import bcrypt from 'bcrypt';
 import connection from './connection';
 import jwt from 'jsonwebtoken';
-import session from 'express-session';
+// import session from 'express-session';
 import { Request, Response } from 'express';
 
 
-app.use(session({
-  secret: 'process.env.SESSION_SECRET',
-  resave: false,
-  saveUninitialized: true
-}));
+// app.use(session({
+//   secret: 'process.env.SESSION_SECRET',
+//   resave: false,
+//   saveUninitialized: true
+// }));
 
 
 

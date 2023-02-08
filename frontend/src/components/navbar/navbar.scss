@@ -1,16 +1,14 @@
-$blue: #003580;
-$lightblue: #0071c2;
-$white: #fff;
+@use '../../master.scss';
 .navbar{
-    height: 50px;
-    background-color: $blue;
+    height: 3.125rem;
+    background-color: master.$blue;
     display: flex;
     justify-content: center;
 }
-.navContainer{
+.nav-container{
     width: 100%;
-    max-width: 1024px;
-    color: $white;
+    max-width: 64rem;
+    color: master.$white;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -18,10 +16,11 @@ $white: #fff;
 .logo{
     font-weight: 500;
 }
-.navButton{
-    margin-left: 20px;
+.nav-button{
+    margin-left: 1.25rem;
     border: none;
-    padding: 5px 10px;
+    padding: 0.3125rem 0.625rem;
     cursor: pointer;
-    color: $lightblue;
+    color: master.$blue;
 }
+

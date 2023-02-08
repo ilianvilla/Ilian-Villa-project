@@ -1,115 +1,111 @@
-$lightgray: rgb(212, 212, 212);
-$white: #fff;
-$lightblue: #0071c2;
-$green: #008009;
-$blue: #003580;
-$gray: rgb(128, 128, 128);
+@use '../../master.scss';
 .searchItem {
-    border: 1px solid $lightgray;
-    padding: 10px;
-    border-radius: 5px;
+    border: 0.0625rem solid master.$lightgray;
+    padding: 0.625rem;
+    border-radius: 0.3125rem;
     display: flex;
     justify-content: space-between;
-    gap: 20px;
-    margin-bottom: 20px;
+    gap: 1.25rem;
+    margin-bottom: 1.25rem;
   }
   
-  .siImg {
-    width: 200px;
-    height: 200px;
+  .search-item-image {
+    width: 12.5rem;
+    height: 12.5rem;
     object-fit: cover;
   }
   
-  .siDesc {
+  .search-item-description {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 0.625rem;
     flex: 2;
   }
   
-  .siTitle {
-    font-size: 20px;
-    color: $lightblue;
+  .search-item-title {
+    font-size: 1.25rem;
+    color: master.$blue;
   }
   
-  .siDistance {
-    font-size: 12px;
+  .search-item-distance {
+    font-size: 0.75rem;
   }
   
-  .siTaxiOp {
-    font-size: 12px;
-    background-color: $green;
-    color: $white;
+  .search-item-taxi {
+    font-size: 0.75rem;
+    background-color: master.$green;
+    color: master.$white;
     width: max-content;
-    padding: 3px;
-    border-radius: 5px;
+    padding: 0.1875rem;
+    border-radius: 0.3125rem;
   }
   
-  .siSubtitle{
-    font-size: 12px;
+  .search-item-subtitle{
+    font-size: 0.75rem;
     font-weight: bold;
   }
   
-  .siFeatures{
-    font-size: 12px;
+  .search-item-features{
+    font-size: 0.75rem;
   }
   
-  .siCancelOp{
-    font-size: 12px;
-    color: $green;
+  .search-item-cancel{
+    font-size: 0.75rem;
+    color: master.$green;
     font-weight: bold;
   }
   
-  .siCancelOpSubtitle{
-    font-size: 12px;
-    color: $green;
+  .search-item-cancel-op{
+    font-size: 0.75rem;
+    color: master.$green;
   }
   
-  .siDetails {
+  .search-item-details {
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between
   }
   
-  .siRating{
+  .search-item-rating{
     display: flex;
     justify-content: space-between
   }
   
-  .siRating>span{
+  .search-item-rating>span{
     font-weight: 500;
   }
-  .siRating>button{
-   background-color: $blue;
-   color: $white;
-   padding: 5px;
+  .search-item-rating>button{
+   background-color: master.$blue;
+   color: master.$white;
+   padding: 0.3125rem;
    font-weight: bold;
    border: none;
   }
   
-  .siDetailTexts{
+  .search-item-texts{
     text-align: right;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 0.3125rem;
   }
   
-  .siPrice{
-    font-size: 24px;
+  .search-item-price{
+    font-size: 1.5rem;
   }
   
-  .siTaxOp{
-    font-size: 12px;
-    color: $gray;
+  .search-item-tax{
+    font-size: 0.75rem;
+    color: master.$gray;
   }
   
-  .siCheckButton{
-    background-color: $lightblue;
-    color: $white;
+  .search-item-check-button{
+    background-color: master.$lightblue;
+    color: master.$white;
     font-weight: bold;
-    padding: 10px 5px;
+    padding: 0.625rem 0.3125rem;
     border: none;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 0.3125rem;
   }
+

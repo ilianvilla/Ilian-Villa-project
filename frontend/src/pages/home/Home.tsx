@@ -11,7 +11,7 @@ const Home: React.FC = () => {
     <div>
       <Navbar/>
       <Header type='list'/>
-      <div className="homeContainer">
+      <div className="home-container">
         <Featured/>
         <PropertyList/>
         <MailList/>

@@ -1,78 +1,75 @@
-$blue: #003580;
-$lightblue: #0071c2;
-$white: #fff;
-$yellow: #febb02;
-$lightdark: rgba(81, 5, 5, 0.008);
-$lightgray: lightgray;
+@use '../../master.scss';
 .header{
-     background-color: $blue;
-     color: $white;
+     background-color: master.$blue;
+     color: master.$white;
      display: flex;
      justify-content: center;
      position: relative;
  }
- .headerContainer{
+ .header-container{
      width: 100%;
-     max-width: 1024px;
-     margin: 20px 0px 100px 0px;
+     max-width: 64rem;
+     margin: 1.25rem 0 6.25rem 0;
  }
- .headerContainer.listMode{
-    margin: 20px 0px 0px 0px;
+ .header-container.listMode{
+    margin: 1.25rem 0 0 0;
  }
- .headerList{
+ .header-list{
      display: flex;
-     gap: 40px;
-     margin-bottom: 50px;
+     gap: 2.5rem;
+     margin-bottom: 3.125rem;
  }
- .headerListItem{
+ .header-list-item{
      display: flex;
      align-items: center;
-     gap: 10px;
+     gap: 0.625rem;
  }
- .headerListItem.active{
-     border: 1px solid $white;
-     padding: 10px;
-     border-radius: 20px;
+ .header-list-item.active{
+     border: 1px solid master.$white;
+     padding: 0.625rem;
+     border-radius: 1.25rem;
  }
- .headerDescription{
-     margin: 20px 0px;
+ .header-description{
+     margin: 1.25rem 0;
  }
- .headerButton{
-     background-color: $lightblue;
-     color: $white;
+ .header-button{
+     background-color: master.$blue;
+     color: master.$white;
      font-weight: 500;
      border: none;
-     padding: 10px;
+     padding: 0.6rem;
      cursor: pointer;
  }
- .headerSearch{
-     height:30px;
-     background-color: $lightdark;
-     border: 3px solid $yellow;
+ .header-search{
+     height: 1.875rem;
+     background-color: master.$lightdark;
+     border: 0.1875rem solid master.$yellow;
      display: flex;
      align-items: center;
      justify-content: space-around;
-     padding: 10px 0px;
-     border-radius: 5px;
+     padding: 0.6rem 0;
+     border-radius: 0.3rem;
      position: relative;
-     bottom: -25px;
+     bottom: -1.5625rem;
      width: 100%;
-     max-width: 1024px;
+     max-width: 64rem;
  }
- .headerIcon{
-     color: $lightgray;
+ .header-icon{
+     color: master.$lightgray;
  }
- .headerSearchItem{
+ .header-search-item{
      display: flex;
      align-items: center;
-     gap: 10px;
+     gap: 0.625rem;
      cursor: pointer;
  }
  .date{
      position: absolute;
-     top: 50px;
+     top: 3.125rem;
      z-index: 2;
  }
+
+
 
 
 

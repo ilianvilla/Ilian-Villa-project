@@ -1,21 +1,23 @@
-$aquablue: #003580;
+@use '../../master.scss';
+
 .footer{
     width: 100%;
-    width: 1024px;
-    font-size: 12px;
+    width: 64rem;
+    font-size: 0.75rem;
 };
-.fLists{
+.footer-lists{
     width: 100%;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 50px;
+    margin-bottom: 3.125rem;
 };
-.fList{
+.footer-list{
     list-style: none;
-    padding: 0%;
+    padding: 0;
 };
-.fListItem{
-    margin-bottom: 10px;
-    color: $aquablue;
+.footer-list-item{
+    margin-bottom: 0.625rem;
+    color: master.$limegreen;
     cursor: pointer;
 };
+

@@ -33,14 +33,13 @@ const Header: React.FC<HeaderProps> = (props) => {
 
   const handleSearch = () => {
     navigate("/showRooms", {state:{date}})
-    console.log(date)
   };
 
   return (
     <div className='header'>
-      <div className="headerContainer">
-        <div className="headerList">
-          <div className="headerListItem active">
+      <div className="header-container">
+        <div className="header-list">
+          <div className="header-list-item active">
               <FontAwesomeIcon icon={faBed} />
               <span>Rooms</span>
               <FontAwesomeIcon icon={faPlane} />
@@ -53,13 +52,13 @@ const Header: React.FC<HeaderProps> = (props) => {
               <span>Airport Taxis</span>
               </div>
               </div>
-              <h1 className="headerTitle">Division5</h1>
-              <p className="headerDescription">Random Description</p>
-              <button className="headerButton">Sign In / Register</button>
-              <div className="headerSearch">
-                <div className="headerSearchItem">
-                <FontAwesomeIcon icon={faCalendarDays} className="headerIcon" />
-                <span onClick={()=>setOpenDate(!openDate)} className='headerSearchText'>{`${format(date[0].startDate, "MM/dd/yyyy")} to ${format(
+              <h1 className="header-title">Division5</h1>
+              <p className="header-description">Random Description</p>
+              <button className="header-button">Sign In / Register</button>
+              <div className="header-search">
+                <div className="header-search-item">
+                <FontAwesomeIcon icon={faCalendarDays} className="header-icon" />
+                <span onClick={()=>setOpenDate(!openDate)} className='header-search-text'>{`${format(date[0].startDate, "MM/dd/yyyy")} to ${format(
                 date[0].endDate,
                 "MM/dd/yyyy"
                 )}`}</span>
@@ -81,9 +80,8 @@ const Header: React.FC<HeaderProps> = (props) => {
               className='date'
               />
               }
-                
-              <div className="headerSearchItem">
-             <button className="headerButton" onClick={handleSearch}>Search</button>
+              <div className="header-search-item">
+             <button className="header-button" onClick={handleSearch}>Search</button>
             </div>
           </div>
         </div>

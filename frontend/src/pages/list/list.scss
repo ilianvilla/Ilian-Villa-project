@@ -1,63 +1,60 @@
-$yellow: #febb02;
-$gray: #555;
-$white: #fff;
-$blue: #0071c2;
-.listContainer {
+@use '../../master.scss';
+.list-container {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 1.25rem;
 };
-.listWrapper {
+.list-wrapper {
     width: 100%;
-    max-width: 1024px;
+    max-width: 64rem;
     display: flex;
-    gap: 20px;
+    gap: 1.25rem;
 };
-.listSearch {
+.list-search {
     flex: 1;
-    background-color: $yellow;
-    padding: 10px;
-    border-radius: 10px;
+    background-color: master.$yellow;
+    padding: 0.625rem;
+    border-radius: 0.625rem;
     position: sticky;
-    top: 10px;
+    top: 0.625rem;
     height: max-content;
 };
-.listTitle{
-    font-size: 20px;
-    color: $gray;
-    margin-bottom: 10px;
+.list-title{
+    font-size: 1.25rem;
+    color: master.$gray;
+    margin-bottom: 0.625rem;
 };
-.listItem{
+.list-item{
     display: flex;
     flex-direction: column;
-    gap: 5px;
-    margin-bottom: 10px;
+    gap: 0.3125rem;
+    margin-bottom: 0.625rem;
 };
-.listItem>label{
-    font-size: 12px;
+.list-item>label{
+    font-size: 0.75rem;
 };
-.listItem>input{
-    height: 30px;
+.list-item>input{
+    height: 1.875rem;
     border: none;
-    padding: 5px;
+    padding: 0.3125rem;
 };
-.listItem>span{
-    height: 30px;
-    padding: 5px;
-    background-color: $white;
+.list-item>span{
+    height: 1.875rem;
+    padding: 0.3125rem;
+    background-color: master.$white;
     display: flex;
     align-items: center;
     cursor: pointer;
 };
-.listSearch>button{
-    padding: 10px;
-    background-color: $blue;
-    color: $white;
+.list-search>button{
+    padding: 0.625rem;
+    background-color: master.$blue;
+    color: master.$white;
     border: none;
     width: 100%;
     font-weight: 500;
     cursor: pointer;
 }; 
-.listResult {
+.list-result {
     flex: 3;
 };

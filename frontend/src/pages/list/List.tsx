@@ -2,7 +2,6 @@ import React from 'react';
 import { useState } from 'react';
 import Header from '../../components/header/Header';
 import Navbar from '../../components/navbar/Navbar';
-import { format } from "date-fns";
 import { DateRange } from 'react-date-range';
 import "./list.scss";
 
@@ -12,7 +11,7 @@ interface Range {
     key: string;
   }
 const List: React.FC = () => {
-    const [openDate, setOpenDate] = useState(false)
+    const [openDate] = useState(false)
     const [date, setDate] = useState<Range[]>([
         {
           startDate: new Date(),
@@ -24,11 +23,11 @@ const List: React.FC = () => {
     <div>
       <Navbar/>
       <Header type='list'/>
-      <div className="listContainer">
-        <div className="listWrapper">
-            <div className="listSearch">
-                <h1 className="listTitle">Search</h1>
-                <div className="listItem">
+      <div className="list-container">
+        <div className="list-wrapper">
+            <div className="list-search">
+                <h1 className="list-title">Search</h1>
+                <div className="list-item">
                     <label>Check-in Date</label>
                 {openDate && (
                 <DateRange
@@ -49,7 +48,7 @@ const List: React.FC = () => {
               )}
                 </div>
                 </div>
-                <div className="listResult">
+                <div className="list-result">
             </div>
         </div>
       </div>
