@@ -4,18 +4,19 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from '../../api/Axios';
 import React from 'react'
 import "./register.scss";
-
-const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
+import { useNavigate } from "react-router-dom";
+const username_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const PASSWORD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 const REGISTER_URL = '/signup';
 
 const Register: React.FC = () => {
-    const userRef = React.useRef<undefined | any>(null);
+    const usernameRef = React.useRef<undefined | any>(null);
     const errRef = useRef<undefined | any>(undefined);
 
-    const [user, setUser] = useState('');
+    const redirect = useNavigate();
+    const [username, setusername] = useState('');
     const [validName, setValidName] = useState(false);
-    const [userFocus, setUserFocus] = useState(false);
+    const [usernameFocus, setusernameFocus] = useState(false);
 
     const [password, setPassword] = useState('');
     const [validPassword, setValidPassword] = useState(false);
@@ -29,12 +30,12 @@ const Register: React.FC = () => {
     const [success, setSuccess] = useState(false);
     
     useEffect(() => {
-        userRef.current.focus();
+        usernameRef.current.focus();
     }, [])
 
     useEffect(() => {
-        setValidName(USER_REGEX.test(user));
-    }, [user])
+        setValidName(username_REGEX.test(username));
+    }, [username])
 
     useEffect(() => {
         setValidPassword(PASSWORD_REGEX.test(password));
@@ -43,33 +44,37 @@ const Register: React.FC = () => {
 
     useEffect(() => {
         setErrMsg('');
-    }, [user, password, matchPassword])
+    }, [username, password, matchPassword])
 
     const handleSubmit = async (e: { preventDefault: () => void; }) => {
         e.preventDefault();
-        const v1 = USER_REGEX.test(user);
+        const v1 = username_REGEX.test(username);
         const v2 = PASSWORD_REGEX.test(password);
         if (!v1 || !v2) {
             setErrMsg("Invalid Entry");
             return;
         }
+        const data = {
+            username: username,
+            password: password  
+        }
         try {
-            const response = await axios.post(REGISTER_URL,
-                JSON.stringify({ user, password }),
-                {
-                    headers: { 'Content-Type': 'application/json' },
-                    withCredentials: true
-                }
+            console.log(username, password);
+            const response = await axios.post(REGISTER_URL,data
             );
+            console.log(response);   
             setSuccess(true);
-            setUser('');
+            setusername('');
             setPassword('');
             setMatchPassword('');
+            if (response.status === 200) {
+            redirect('/login');
+            }
         } catch (err) {
             if (!(err as any)?.response) {
                 setErrMsg('No Server Response');
             } else if ((err as any).response?.status === 409) {
-                setErrMsg('Username Taken');
+                setErrMsg('usernamename Taken');
             } else {
                 setErrMsg('Registration Failed')
             }
@@ -94,22 +99,22 @@ const Register: React.FC = () => {
                         <label htmlFor="username">
                             Username:
                             <FontAwesomeIcon icon={faCheck} className={validName ? "valid" : "hide"} />
-                            <FontAwesomeIcon icon={faTimes} className={validName || !user ? "hide" : "invalid"} />
+                            <FontAwesomeIcon icon={faTimes} className={validName || !username ? "hide" : "invalid"} />
                         </label>
                         <input
                             type="text"
                             id="username"
-                            ref={userRef}
+                            ref={usernameRef}
                             autoComplete="off"
-                            onChange={(e) => setUser(e.target.value)}
-                            value={user}
+                            onChange={(e) => setusername(e.target.value)}
+                            value={username}
                             required
                             aria-invalid={validName ? "false" : "true"}
                             aria-describedby="uidnote"
-                            onFocus={() => setUserFocus(true)}
-                            onBlur={() => setUserFocus(false)}
+                            onFocus={() => setusernameFocus(true)}
+                            onBlur={() => setusernameFocus(false)}
                         />
-                        <p id="uidnote" className={userFocus && user && !validName ? "instructions" : "offscreen"}>
+                        <p id="uidnote" className={usernameFocus && username && !validName ? "instructions" : "offscreen"}>
                             <FontAwesomeIcon icon={faInfoCircle} />
                             4 to 24 characters.<br />
                             Must begin with a letter.<br />
@@ -137,14 +142,14 @@ const Register: React.FC = () => {
                             Must include uppercase and lowercase letters, a number and a special character.<br />
                             Allowed special characters: <span aria-label="exclamation mark">!</span> <span aria-label="at symbol">@</span> <span aria-label="hashtag">#</span> <span aria-label="dollar sign">$</span> <span aria-label="percent">%</span>
                         </p>
-                        <label htmlFor="confirm_pwd">
+                        <label htmlFor="confirm_password">
                             Confirm Password:
                             <FontAwesomeIcon icon={faCheck} className={validMatch && matchPassword ? "valid" : "hide"} />
                             <FontAwesomeIcon icon={faTimes} className={validMatch || !matchPassword ? "hide" : "invalid"} />
                         </label>
                         <input
                             type="password"
-                            id="confirm_pwd"
+                            id="confirm_password"
                             onChange={(e) => setMatchPassword(e.target.value)}
                             value={matchPassword}
                             required
@@ -158,7 +163,7 @@ const Register: React.FC = () => {
                             Must match the first password input field.
                         </p>
 
-                        <button disabled={!validName || !validPassword || !validMatch ? true : false}>Sign Up</button>
+                        <button className='sign-in' disabled={!validName || !validPassword || !validMatch ? true : false}>Sign Up</button>
                     </form>
                     <p>
                         Already registered?<br />

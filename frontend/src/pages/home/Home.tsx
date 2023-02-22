@@ -1,24 +1,20 @@
-import React from 'react'
-import Featured from '../../components/featured/Featured';
-import Footer from '../../components/footer/Footer';
-import Header from '../../components/header/Header';
-import MailList from '../../components/mailList/MailList';
-import Navbar from '../../components/navbar/Navbar';
-import PropertyList from '../../components/propertyList/PropertyList';
+import React, { useState } from 'react'
+import Calendar from '../../components/calendar/Calendar';
+import ShowRooms from '../../components/showRooms/ShowRooms';
+import useRoleRedirect from '../../hooks/CheckRole';
 import "./home.scss";
 const Home: React.FC = () => {
-  return (
-    <div>
-      <Navbar/>
-      <Header type='list'/>
+  const [dates,setDates]=useState('');
+  const [openRooms,setOpen]=useState(false);
+  useRoleRedirect();
+  return (    
       <div className="home-container">
-        <Featured/>
-        <PropertyList/>
-        <MailList/>
-        <Footer/>
+     
+        <Calendar open={setOpen} changeDate={setDates} type={''}/>
+       {openRooms ?  <ShowRooms dates={dates}/> : null}
       </div>
-    </div>
   )
 }
+
 
 export default Home;

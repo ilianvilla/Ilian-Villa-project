@@ -1,0 +1,87 @@
+@use '../../master.scss';
+
+// .header{
+//      background-color: master.$blue;
+//      color: master.$white;
+//      display: flex;
+//      justify-content: center;
+//      position: relative;
+//  }
+//  .header-container{
+//      width: 100%;
+//      max-width: 64rem;
+//      margin: 1.25rem 0 6.25rem 0;
+//  }
+//  .header-container.listMode{
+//     margin: 1.25rem 0 0 0;
+//  }
+//  .header-list{
+//      display: flex;
+//      gap: 2.5rem;
+//      margin-bottom: 3.125rem;
+//  }
+//  .header-list-item{
+//      display: flex;
+//      align-items: center;
+//      gap: 0.625rem;
+//  }
+//  .header-list-item.active{
+//      border: 1px solid master.$white;
+//      padding: 0.625rem;
+//      border-radius: 1.25rem;
+//  }
+//  .header-description{
+//      margin: 1.25rem 0;
+//  }
+ .header-button{
+     color: rgba(0, 0, 0, 0.872);
+     font-weight: 500;
+     border-radius: 10px;
+     border: none;
+     padding: 0.0.6rem;
+     padding-top: 2px;
+     padding-bottom: 2px;
+     cursor: pointer;
+ }
+ .header-search{
+    //  height: 1.875rem;
+     background-color: master.$lightdark;
+     display: flex;
+     align-items: center;
+     justify-content: space-around;
+     padding: 0.1rem 0.2;
+     border-radius: 0.3rem;
+     position: relative;
+     bottom: -1.5625rem;
+     width: 100%;
+     max-width: 64rem;
+ }
+//  .header-icon{
+//      color: master.$lightgray;
+//  }
+ .header-search-item{
+     display: flex;
+     align-items: center;
+     gap: 0.625rem;
+     cursor: pointer;
+ }
+ .date{
+     position: absolute;
+     top: 3.125rem;
+     z-index: 2;
+ }
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+

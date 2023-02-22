@@ -3,7 +3,7 @@ import React from 'react'
 import "./login.scss";
 import { useState, useEffect } from 'react';
 
-const LOGIN_URL = '/login';
+const LOGIN_URL = 'http://localhost:1000/login';
 
 const Login: React.FC = () => {
     const userRef = React.useRef<undefined | any>(null);
@@ -12,10 +12,11 @@ const Login: React.FC = () => {
     console.log('Ok');
    };
 
-    const [user, setUser] = useState('');
+    const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
     const [success, setSuccess] = useState(false);
+    
     
     useEffect(() => {
         userRef.current.focus();
@@ -23,22 +24,37 @@ const Login: React.FC = () => {
 
     useEffect(() => {
         setErrorMessage('');
-    }, [user, password])
+    }, [username, password])
 
     const handleSubmit = async (e: { preventDefault: () => void; }) => {
         e.preventDefault();
-
+        const data = {
+            username: username,
+            password: password  
+        }
         try {
-            const response: any = await axios.post(LOGIN_URL,
-                JSON.stringify({ user, password }),
-                {
-                    headers: { 'Content-Type': 'application/json' },
-                    withCredentials: true
+            const response = await axios.post(LOGIN_URL, data);
+            if (response.status === 200) {
+                if (response.data.error) {
+                    setErrorMessage(response.data.error);
+                } else if (response.data.isAdmin) {
+                    window.location.href = "/users";
+                    localStorage.setItem('role','admin');
+
+                } else if (response.data.hasOwnProperty('username') && response.data.username === username) {
+                    setUsername('');
+                    setPassword('');
+                    setSuccess(true);
                 }
-            );
-            setUser('');
-            setPassword('');
-            setSuccess(true);
+                    else if (!response.data.isAdmin) {
+                        localStorage.setItem('user',response.data.user)
+                        localStorage.setItem('role','user');
+                        window.location.href = "/";
+                    }
+                 else {
+                    setErrorMessage('Incorrect credentials');
+                }
+            }
         } catch (err) {
             if (!(err as any)?.response) {
                 setErrorMessage('No Server Response');
@@ -52,7 +68,7 @@ const Login: React.FC = () => {
             errRef.current.focus();
         }
     }
-
+    
     return (
         <>
         <div className='login'>
@@ -69,14 +85,14 @@ const Login: React.FC = () => {
                     <p ref={errRef} className={errorMessage ? "errmsg" : "offscreen"} aria-live="assertive">{errorMessage}</p>
                     <h1>Sign In</h1>
                     <form onSubmit={handleSubmit}>
-                        <label htmlFor="username">Email:</label>
+                        <label htmlFor="username">Username:</label>
                         <input
                             type="text"
-                            id="email"
+                            id="username"
                             ref={userRef}
                             autoComplete="off"
-                            onChange={(e) => setUser(e.target.value)}
-                            value={user}
+                            onChange={(e) => setUsername(e.target.value)}
+                            value={username}
                             required
                         />
 
@@ -88,7 +104,7 @@ const Login: React.FC = () => {
                             value={password}
                             required
                         />
-                        <button>Sign In</button>
+                        <button className='sign-in'>Sign In</button>
                     </form>
                     <p>
                         Need an Account?<br />
@@ -100,8 +116,8 @@ const Login: React.FC = () => {
                 </section>
             )}
             </div>
-        </>
+            </>
     )
-}
-
-export default Login;
+ }
+            
+ export default Login;

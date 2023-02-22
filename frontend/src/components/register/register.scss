@@ -1,22 +1,22 @@
 @use '../../master.scss';
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-} ;
+// * {
+//     margin: 0;
+//     padding: 0;
+//     box-sizing: border-box;
+// } ;
 
-* html {
-    font-family: 'Nunito', sans-serif;
-    font-size: 1.375rem;
-    color: master.$white;
-}
+// * html {
+//     font-family: 'Nunito', sans-serif;
+//     font-size: 1.375rem;
+//     color: master.$white;
+// }
 
-body {
-    min-height: 100vh;
-    background-color: master.$lightblue;
-} 
+// body {
+//     min-height: 100vh;
+//     background-color: master.$yellow;
+// } 
 .App {
   display: flex;
   flex-direction: column;
@@ -102,9 +102,11 @@ button {
 }
 
 .errmsg {
-    background-color: master.$lightpink;
-    color: master.$red;
-    font-weight: bold;
+    background-color:rgba(254, 254, 254, 0.631);
+    color: rgba(13, 42, 105, 0.647);
+    
+    border-left: 2px solid rgb(192, 98, 22);
+    width: fit-content;
     padding: 0.5rem;
     margin-bottom: 0.5rem;
 }

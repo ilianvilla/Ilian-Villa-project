@@ -1,83 +1,128 @@
-@use '../../master.scss';
-.header{
-     background-color: master.$blue;
-     color: master.$white;
-     display: flex;
-     justify-content: center;
-     position: relative;
- }
- .header-container{
-     width: 100%;
-     max-width: 64rem;
-     margin: 1.25rem 0 6.25rem 0;
- }
- .header-container.listMode{
-    margin: 1.25rem 0 0 0;
- }
- .header-list{
-     display: flex;
-     gap: 2.5rem;
-     margin-bottom: 3.125rem;
- }
- .header-list-item{
-     display: flex;
-     align-items: center;
-     gap: 0.625rem;
- }
- .header-list-item.active{
-     border: 1px solid master.$white;
-     padding: 0.625rem;
-     border-radius: 1.25rem;
- }
- .header-description{
-     margin: 1.25rem 0;
- }
- .header-button{
-     background-color: master.$blue;
-     color: master.$white;
-     font-weight: 500;
-     border: none;
-     padding: 0.6rem;
-     cursor: pointer;
- }
- .header-search{
-     height: 1.875rem;
-     background-color: master.$lightdark;
-     border: 0.1875rem solid master.$yellow;
-     display: flex;
-     align-items: center;
-     justify-content: space-around;
-     padding: 0.6rem 0;
-     border-radius: 0.3rem;
-     position: relative;
-     bottom: -1.5625rem;
-     width: 100%;
-     max-width: 64rem;
- }
- .header-icon{
-     color: master.$lightgray;
- }
- .header-search-item{
-     display: flex;
-     align-items: center;
-     gap: 0.625rem;
-     cursor: pointer;
- }
- .date{
-     position: absolute;
-     top: 3.125rem;
-     z-index: 2;
- }
+/* Set some basic styles for the page */
 
+  
+  .wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+  
+  /* Set styles for the sidebar */
+  
+  #sidebar {
+    background-color: rgb(255, 255, 255);
+    color: rgba(36, 33, 33, 0.895);
+    width: 250px;
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    overflow-y: auto;
+    transition: all 0.3s;
+    padding-top: 60px;
+    box-shadow: 2px 8px 5px 4px rgba(0, 0, 0, 0.137);
+  }
+  
+  #sidebar .sidebar-header {
+    padding: 20px;
+  }
+  
+  #sidebar ul.components {
+    padding: 0;
+    
+  }
+  
+  #sidebar ul li a {
+    display: block;
+    padding: 10px 15px;
+    font-size: 1.1em;
+    text-decoration: none;
+    color: black; /* default text color */
+  }
+  
 
-
-
-
-
-
-
-
-
+  
+  #sidebar.active {
+    width: 50px;
+  }
+  
+  #sidebar.active .sidebar-header h3 {
+    display: none;
+  }
+  
+  #sidebar.active ul li a {
+    padding: 10px;
+    font-size: 0.85em;
+    text-align: center;
+  }
+  
+  #sidebar.active ul li a span {
+    display: none;
+  }
+  
+  /* Set styles for the content area */
+  
+  #content {
+    margin-left: 250px;
+    padding: 20px;
+    height: 100%;
+  }
+  
+  ul.components li:hover a {
+    background-color: rgba(29, 43, 137, 0.702);
+    cursor: pointer;
+    color: white;
+  }
+  
+  
+  ul.components li.active a {
+    background-color: rgba(29, 43, 137, 0.702);
+    color: white;
+  }
+  
+  /* Set media queries to make the sidebar responsive */
+  
+  @media (max-width: 768px) {
+    #sidebar {
+      width: 50px;
+    }
+  
+    #sidebar .sidebar-header h3 {
+      display: none;
+    }
+  
+    #sidebar ul li a {
+      padding: 10px;
+      font-size: 0.85em;
+      text-align: center;
+    }
+  
+    #sidebar ul li a span {
+      display: none;
+    }
+  
+    #sidebar.active {
+      width: 250px;
+    }
+  
+    #sidebar.active .sidebar-header h3 {
+      display: block;
+    }
+  
+    #sidebar.active ul li a {
+      padding: 10px 15px;
+      font-size: 1.1em;
+      text-align: left;
+    }
+  
+    #sidebar.active ul li a span {
+      display: inline;
+      margin-left: 10px;
+    }
+  
+    #content {
+      margin-left: 50px;
+    }
+  }
+  
 
   
 
