@@ -1,0 +1,123 @@
+@use '../../master.scss';
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+
+// html {
+//     font-family: 'Nunito', sans-serif;
+//     font-size: 1.375rem;
+//     color: master.$white;
+// }
+// body {
+//     min-height: 100vh;
+//     background-color: master.$blue;
+// }
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; 
+  padding: 1rem 0.5rem;
+}
+section {
+    width: 90%;
+    max-width: 26.25rem;
+    min-height: 25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 1rem;
+    border-top: 2px solid rgba(14, 52, 177, 0.742);
+background-color: rgba(255, 255, 255, 0.023);
+border-radius: 10px;
+box-shadow: 4px 10px 6px rgba(0, 0, 0, 0.112);
+}
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-grow: 1;
+    padding-bottom: 1rem;
+}
+a, a:visited {
+    color: master.$white;
+}
+input[type="text"],
+input[type="password"],
+button,
+textarea {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.375rem;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+  border:none;
+  background-color: rgba(128, 128, 128, 0.068);
+}
+
+label
+ {
+  margin-top: 1rem;
+}
+.sign-in {
+  padding-inline: 1.5rem;
+  width: fit-content;
+ position: relative;
+ left: 50%;
+ font-size: x-large;
+ transform: translateX(-50%);
+ margin-top: 1rem;
+ border:none;
+ background: rgba(56, 51, 143, 0.525);
+background: linear-gradient(90deg, rgba(86, 80, 191, 0.461) 0%, rgba(55, 55, 205, 0.684) 36%, rgba(0,212,255,1) 100%);
+color: white;
+border-radius: 0.5rem;
+transition: 0.4ms ease-in-out;
+
+}
+.sign-in:hover {
+    background: rgb(56, 51, 143);
+    background: linear-gradient(90deg, rgb(86, 80, 191) 0%, rgb(106, 106, 213) 36%, rgba(0,212,255,1) 100%); 
+}
+.instructions {
+    font-size: 0.75rem;
+    border-radius: 0.5rem;
+    background: master.$black;
+    color: master.$white;
+    padding: 0.25rem;
+    position: relative;
+    bottom: -0.625rem;
+}
+.instructions > svg {
+    margin-right: 0.25rem;
+}
+.offscreen {
+    position: absolute;
+    left: -624.9375rem;
+}
+.hide {
+    display: none;
+}
+.valid {
+    color: master.$limegreen;
+    margin-left: 0.25rem;
+}
+.invalid {
+    color:white;
+    margin-left: 0.25rem;
+}
+.error-message {
+    background-color: master.$lightpink;
+color:white;
+    font-weight: bold;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.line {
+    display: inline-block;
+}
+.login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }

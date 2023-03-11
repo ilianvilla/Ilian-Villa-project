@@ -1,0 +1,23 @@
+@use '../../master.scss';
+
+.footer{
+    width: 100%;
+    width: 64rem;
+    font-size: 0.75rem;
+};
+.footer-lists{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3.125rem;
+};
+.footer-list{
+    list-style: none;
+    padding: 0;
+};
+.footer-list-item{
+    margin-bottom: 0.625rem;
+    color: master.$limegreen;
+    cursor: pointer;
+};
+

@@ -1,86 +1,128 @@
-$blue: #003580;
-$lightblue: #0071c2;
-$white: #fff;
-$yellow: #febb02;
-$lightdark: rgba(81, 5, 5, 0.008);
-$lightgray: lightgray;
-.header{
-     background-color: $blue;
-     color: $white;
-     display: flex;
-     justify-content: center;
-     position: relative;
- }
- .headerContainer{
-     width: 100%;
-     max-width: 1024px;
-     margin: 20px 0px 100px 0px;
- }
- .headerContainer.listMode{
-    margin: 20px 0px 0px 0px;
- }
- .headerList{
-     display: flex;
-     gap: 40px;
-     margin-bottom: 50px;
- }
- .headerListItem{
-     display: flex;
-     align-items: center;
-     gap: 10px;
- }
- .headerListItem.active{
-     border: 1px solid $white;
-     padding: 10px;
-     border-radius: 20px;
- }
- .headerDescription{
-     margin: 20px 0px;
- }
- .headerButton{
-     background-color: $lightblue;
-     color: $white;
-     font-weight: 500;
-     border: none;
-     padding: 10px;
-     cursor: pointer;
- }
- .headerSearch{
-     height:30px;
-     background-color: $lightdark;
-     border: 3px solid $yellow;
-     display: flex;
-     align-items: center;
-     justify-content: space-around;
-     padding: 10px 0px;
-     border-radius: 5px;
-     position: relative;
-     bottom: -25px;
-     width: 100%;
-     max-width: 1024px;
- }
- .headerIcon{
-     color: $lightgray;
- }
- .headerSearchItem{
-     display: flex;
-     align-items: center;
-     gap: 10px;
-     cursor: pointer;
- }
- .date{
-     position: absolute;
-     top: 50px;
-     z-index: 2;
- }
+/* Set some basic styles for the page */
 
+  
+  .wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+  
+  /* Set styles for the sidebar */
+  
+  #sidebar {
+    background-color: rgb(255, 255, 255);
+    color: rgba(36, 33, 33, 0.895);
+    width: 250px;
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    overflow-y: auto;
+    transition: all 0.3s;
+    padding-top: 60px;
+    box-shadow: 2px 8px 5px 4px rgba(0, 0, 0, 0.137);
+  }
+  
+  #sidebar .sidebar-header {
+    padding: 20px;
+  }
+  
+  #sidebar ul.components {
+    padding: 0;
+    
+  }
+  
+  #sidebar ul li a {
+    display: block;
+    padding: 10px 15px;
+    font-size: 1.1em;
+    text-decoration: none;
+    color: black; /* default text color */
+  }
+  
 
-
-
-
-
-
-
+  
+  #sidebar.active {
+    width: 50px;
+  }
+  
+  #sidebar.active .sidebar-header h3 {
+    display: none;
+  }
+  
+  #sidebar.active ul li a {
+    padding: 10px;
+    font-size: 0.85em;
+    text-align: center;
+  }
+  
+  #sidebar.active ul li a span {
+    display: none;
+  }
+  
+  /* Set styles for the content area */
+  
+  #content {
+    margin-left: 250px;
+    padding: 20px;
+    height: 100%;
+  }
+  
+  ul.components li:hover a {
+    background-color: rgba(29, 43, 137, 0.702);
+    cursor: pointer;
+    color: white;
+  }
+  
+  
+  ul.components li.active a {
+    background-color: rgba(29, 43, 137, 0.702);
+    color: white;
+  }
+  
+  /* Set media queries to make the sidebar responsive */
+  
+  @media (max-width: 768px) {
+    #sidebar {
+      width: 50px;
+    }
+  
+    #sidebar .sidebar-header h3 {
+      display: none;
+    }
+  
+    #sidebar ul li a {
+      padding: 10px;
+      font-size: 0.85em;
+      text-align: center;
+    }
+  
+    #sidebar ul li a span {
+      display: none;
+    }
+  
+    #sidebar.active {
+      width: 250px;
+    }
+  
+    #sidebar.active .sidebar-header h3 {
+      display: block;
+    }
+  
+    #sidebar.active ul li a {
+      padding: 10px 15px;
+      font-size: 1.1em;
+      text-align: left;
+    }
+  
+    #sidebar.active ul li a span {
+      display: inline;
+      margin-left: 10px;
+    }
+  
+    #content {
+      margin-left: 50px;
+    }
+  }
+  
 
   
 

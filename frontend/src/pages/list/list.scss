@@ -1,0 +1,60 @@
+@use '../../master.scss';
+.list-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.25rem;
+};
+.list-wrapper {
+    width: 100%;
+    max-width: 64rem;
+    display: flex;
+    gap: 1.25rem;
+};
+.list-search {
+    flex: 1;
+    background-color: master.$yellow;
+    padding: 0.625rem;
+    border-radius: 0.625rem;
+    position: sticky;
+    top: 0.625rem;
+    height: max-content;
+};
+.list-title{
+    font-size: 1.25rem;
+    color: master.$gray;
+    margin-bottom: 0.625rem;
+};
+.list-item{
+    display: flex;
+    flex-direction: column;
+    gap: 0.3125rem;
+    margin-bottom: 0.625rem;
+};
+.list-item>label{
+    font-size: 0.75rem;
+};
+.list-item>input{
+    height: 1.875rem;
+    border: none;
+    padding: 0.3125rem;
+};
+.list-item>span{
+    height: 1.875rem;
+    padding: 0.3125rem;
+    background-color: master.$white;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+};
+.list-search>button{
+    padding: 0.625rem;
+    background-color: master.$blue;
+    color: master.$white;
+    border: none;
+    width: 100%;
+    font-weight: 500;
+    cursor: pointer;
+}; 
+.list-result {
+    flex: 3;
+};

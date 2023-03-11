@@ -1,0 +1,123 @@
+@use '../../master.scss';
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+// * {
+//     margin: 0;
+//     padding: 0;
+//     box-sizing: border-box;
+// } ;
+
+// * html {
+//     font-family: 'Nunito', sans-serif;
+//     font-size: 1.375rem;
+//     color: master.$white;
+// }
+
+// body {
+//     min-height: 100vh;
+//     background-color: master.$yellow;
+// } 
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; 
+  padding: 1rem 0.5rem;
+}
+
+section {
+    width: 100%;
+    max-width: 26.25rem;
+    min-height: 25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 1rem;
+    background-color: master.$black;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-grow: 1;
+    padding-bottom: 1rem;
+}
+
+a, a:visited {
+    color: master.$white;
+}
+
+input[type="text"],
+input[type="password"],
+button,
+textarea {
+  font-family: 'Nunito', sans-serif;
+  font-size: 22px;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+}
+
+label,
+button {
+  margin-top: 1rem;
+}
+
+button {
+  padding: 0.5rem;
+}
+
+.instructions {
+    font-size: 0.75rem;
+    border-radius: 0.5rem;
+    background: master.$black;
+    color: master.$white;
+    padding: 0.25rem;
+    position: relative;
+    bottom: -0.625rem;
+}
+
+.instructions > svg {
+    margin-right: 0.25rem;
+}
+
+.offscreen {
+    position: absolute;
+    left: -624.9375rem;
+}
+
+.hide {
+    display: none;
+}
+
+.valid {
+    color: master.$limegreen;
+    margin-left: 0.25rem;
+}
+
+.invalid {
+    color: master.$red;
+    margin-left: 0.25rem;
+}
+
+.errmsg {
+    background-color:rgba(254, 254, 254, 0.631);
+    color: rgba(13, 42, 105, 0.647);
+    
+    border-left: 2px solid rgb(192, 98, 22);
+    width: fit-content;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.line {
+    display: inline-block;
+}
+
+.register{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}

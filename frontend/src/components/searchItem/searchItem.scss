@@ -1,0 +1,111 @@
+@use '../../master.scss';
+.searchItem {
+    border: 0.0625rem solid master.$lightgray;
+    padding: 0.625rem;
+    border-radius: 0.3125rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .search-item-image {
+    width: 12.5rem;
+    height: 12.5rem;
+    object-fit: cover;
+  }
+  
+  .search-item-description {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    flex: 2;
+  }
+  
+  .search-item-title {
+    font-size: 1.25rem;
+    color: master.$blue;
+  }
+  
+  .search-item-distance {
+    font-size: 0.75rem;
+  }
+  
+  .search-item-taxi {
+    font-size: 0.75rem;
+    background-color: master.$green;
+    color: master.$white;
+    width: max-content;
+    padding: 0.1875rem;
+    border-radius: 0.3125rem;
+  }
+  
+  .search-item-subtitle{
+    font-size: 0.75rem;
+    font-weight: bold;
+  }
+  
+  .search-item-features{
+    font-size: 0.75rem;
+  }
+  
+  .search-item-cancel{
+    font-size: 0.75rem;
+    color: master.$green;
+    font-weight: bold;
+  }
+  
+  .search-item-cancel-op{
+    font-size: 0.75rem;
+    color: master.$green;
+  }
+  
+  .search-item-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between
+  }
+  
+  .search-item-rating{
+    display: flex;
+    justify-content: space-between
+  }
+  
+  .search-item-rating>span{
+    font-weight: 500;
+  }
+  .search-item-rating>button{
+   background-color: master.$blue;
+   color: master.$white;
+   padding: 0.3125rem;
+   font-weight: bold;
+   border: none;
+  }
+  
+  .search-item-texts{
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3125rem;
+  }
+  
+  .search-item-price{
+    font-size: 1.5rem;
+  }
+  
+  .search-item-tax{
+    font-size: 0.75rem;
+    color: master.$gray;
+  }
+  
+  .search-item-check-button{
+    background-color: master.$lightblue;
+    color: master.$white;
+    font-weight: bold;
+    padding: 0.625rem 0.3125rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 0.3125rem;
+  }
+

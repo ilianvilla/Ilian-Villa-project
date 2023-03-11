@@ -1,0 +1,112 @@
+
+
+.bg-success.bg-gradient
+.total{
+  background-color: black;
+}
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+  color: #a6acb2;
+}
+
+h2 {
+  background-blend-mode: color;
+  color: #000000;
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.room-container {
+  color:#000408;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin-bottom: 30px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -10px;
+}
+
+.col {
+  padding: 0 10px;
+  width: calc(25% - 20px);
+  margin-bottom: 30px;
+}
+
+.card {
+  border: none;
+  margin-bottom: 20px;
+  background-color: #a9bfd119;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.card-title {
+  font-size: 24px;
+  margin-bottom: 40px;
+  color:rgb(0, 0, 0);
+}
+
+.card-text {
+  margin-bottom: 15px;
+  color:rgb(0, 0, 0);
+}
+
+.card-footer {
+  color:rgb(0, 0, 0);
+  background-color: #dbe7f3;
+  border-top: none;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0069d9;
+  border-color: #0062cc;
+  cursor: pointer;
+}
+
+.btn-primary:active {
+  background-color: #0062cc;
+  border-color: #005cbf;
+  cursor: pointer;
+}
+
+.btn-primary:disabled {
+  background-color: #6c757d;
+  border-color: #6c757d;
+  cursor: not-allowed;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active:focus,
+.btn-primary:not(:disabled):not(.disabled):active:hover,
+.btn-primary:not(:disabled):not(.disabled):focus,
+.btn-primary:not(:disabled):not(.disabled):hover,
+.btn-primary:not(:disabled):not(.disabled).active:focus,
+.btn-primary:not(:disabled):not(.disabled).active:hover,
+.show > .btn-primary.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+}
